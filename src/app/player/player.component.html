@@ -1,4 +1,5 @@
-<table>
+<h2> War Leaderboard</h2>
+<table class = table table-hover>
     <thead>
         <tr>
             <th>Name</th>
@@ -7,8 +8,10 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td></td>
+        <tr *ngFor="let p of players">
+            <td>{{p.name}}</td>
+            <td>{{p.wins}}</td>
+            <td>{{p.losses}}</td>
         </tr>
     </tbody>
 </table>
