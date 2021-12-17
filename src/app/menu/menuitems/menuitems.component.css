@@ -2,11 +2,11 @@ li{
     display: inline-block;
 }
 a {
-    color:black;
+    color:white;
     text-decoration: none;
     padding: 0px 20px;
 }
 a:hover{
-    color:white;
-    background: black;
+    color:black;
+    background: white;
 }

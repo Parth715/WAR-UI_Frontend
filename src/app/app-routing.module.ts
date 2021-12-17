@@ -4,9 +4,9 @@ import { PlayerComponent } from './player/player.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
-  {path: "", redirectTo:"/Welcome", pathMatch: "full"},
-  {path: "/Players", component: PlayerComponent},
-  {path: "/Welcome", component: WelcomeComponent}
+  {path: "", redirectTo:"/welcome", pathMatch: "full"},
+  {path: "player", component: PlayerComponent},
+  {path: "welcome", component: WelcomeComponent}
 ];
 
 @NgModule({
