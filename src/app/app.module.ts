@@ -8,6 +8,7 @@ import { PlayerComponent } from './player/player.component';
 import { MenuComponent } from './menu/menu.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { MenuitemsComponent } from './menu/menuitems/menuitems.component';
+import { PlayComponent } from './play/play.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { MenuitemsComponent } from './menu/menuitems/menuitems.component';
     PlayerComponent,
     MenuComponent,
     WelcomeComponent,
-    MenuitemsComponent
+    MenuitemsComponent,
+    PlayComponent
   ],
   imports: [
     BrowserModule,
