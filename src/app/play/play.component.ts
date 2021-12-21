@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Card } from './card';
+import { CardsService } from './cards.service';
 
 @Component({
   selector: 'app-play',
@@ -7,10 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private cardsrv: CardsService) { }
 
+  playercard!: Card;
+  AIcard!: Card;
+  
   ngOnInit(): void {
-    
+    this.refresh();
   }
-
+  refresh(): void {
+    this.cardsrv.GetBlank().subscribe({
+      next: res => {
+        this.playercard = res;
+        this.AIcard = res;
+      },
+      error: err => console.log(err)
+    })
+  }
 }

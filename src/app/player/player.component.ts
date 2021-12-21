@@ -9,11 +9,11 @@ import { PlayerService } from './player.service';
 })
 export class PlayerComponent implements OnInit {
 
-  players: Player[] = []
-  constructor(private playermeth: PlayerService) { }
+  players: Player[] = [];
+  constructor(private playersrv: PlayerService) { }
 
   ngOnInit(): void {
-    this.playermeth.Getall().subscribe({
+    this.playersrv.Getall().subscribe({
       next: res => this.players = res,
       error: err => console.log(err)
     })
