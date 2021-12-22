@@ -2,9 +2,13 @@ p {
     text-align: center;
 }
 .space {
-    padding-bottom: 17%;
+    padding-bottom: 5.5%;
     text-align: center;
 }
 .left {
     padding-left: 330px;
+}
+img {
+    width: 200px;
+    height: 200px;
 }

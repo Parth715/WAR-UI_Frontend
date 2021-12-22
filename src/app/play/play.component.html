@@ -1,11 +1,14 @@
 <button type = button class = "btn btn-primary" routerLink="/welcome">QUIT</button>
-<p class = "space">{{AIcard.face}}</p>
+<p class = "space">
+    <img src ={{AIcard.photo}}>
+</p>
 <p class = "space">
     <span>Wins:</span>
     <span class = "space" class = "left">FACED DOWN CARD</span>
     <span class = "left">Losses:</span>
 </p>
-<p>{{playercard.face}}</p>
+<p>
+    <img src ={{playercard.photo}}></p>
 <p>
     <button type = "button" class = "btn btn-secondary">Play</button>
 </p>
