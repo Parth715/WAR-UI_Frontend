@@ -23,7 +23,8 @@ export class SelectplayerComponent implements OnInit {
     })
   }
   play(): void{
-    
+    this.playersrv.currentplayer = this.player;
+    this.router.navigate(["/play"])
   }
 
 }
