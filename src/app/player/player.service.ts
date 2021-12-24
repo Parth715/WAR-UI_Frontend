@@ -8,7 +8,8 @@ import { Player } from './player';
 })
 export class PlayerService {
 
-  baseurl = "http://localhost:5085/api/players"
+  currentplayer!: Player;
+  baseurl = "http://localhost:5085/api/players";
   constructor(private httpmeth: HttpClient) { }
   Getall(): Observable<Player[]>{
     return this.httpmeth.get(this.baseurl) as Observable<Player[]>

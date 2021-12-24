@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Player } from '../player/player';
+import { PlayerService } from '../player/player.service';
 import { Card } from './card';
 import { CardsService } from './cards.service';
 
@@ -10,10 +12,11 @@ import { CardsService } from './cards.service';
 })
 export class PlayComponent implements OnInit {
 
-  constructor(private router: Router, private cardsrv: CardsService) { }
+  constructor(private router: Router, private cardsrv: CardsService, private playersrv: PlayerService) { }
 
   playercard!: Card;
   AIcard!: Card;
+  player!: Player;
   
   ngOnInit(): void {
     this.refresh();
@@ -26,5 +29,6 @@ export class PlayComponent implements OnInit {
       },
       error: err => console.log(err)
     })
+    this.player = this.playersrv.currentplayer
   }
 }
