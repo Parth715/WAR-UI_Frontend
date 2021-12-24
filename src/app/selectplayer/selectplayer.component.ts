@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Player } from '../player/player';
+import { PlayerService } from '../player/player.service';
 
 @Component({
   selector: 'app-selectplayer',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SelectplayerComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private route: ActivatedRoute, private playersrv: PlayerService) { }
 
+  player!: Player;
   ngOnInit(): void {
+    let id = this.route.snapshot.params["id"];
+    this.playersrv.GetByPK(id).subscribe({
+      next: res => {
+        this.player = res
+      },
+      error: err => console.log(err)
+    })
+  }
+  play(): void{
+    
   }
 
 }

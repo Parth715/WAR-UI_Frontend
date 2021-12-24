@@ -10,7 +10,7 @@ const routes: Routes = [
   {path: "player", component: PlayerComponent},
   {path: "welcome", component: WelcomeComponent},
   {path: "play", component: PlayComponent},
-  {path: "selectplayer", component: SelectplayerComponent},
+  {path: "selectplayer/:id", component: SelectplayerComponent},
   {path: "**", component: WelcomeComponent}
 ];
 

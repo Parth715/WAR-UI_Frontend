@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, ɵPlayer } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Player } from './player';
 
@@ -13,5 +13,8 @@ export class PlayerService {
   constructor(private httpmeth: HttpClient) { }
   Getall(): Observable<Player[]>{
     return this.httpmeth.get(this.baseurl) as Observable<Player[]>
+  }
+  GetByPK(id: string): Observable<Player>{
+    return this.httpmeth.get(`${this.baseurl}/${id}`) as Observable<Player>
   }
 }
