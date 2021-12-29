@@ -22,7 +22,7 @@ export class PlayComponent implements OnInit {
     this.refresh();
   }
   refresh(): void {
-    this.cardsrv.GetBlank().subscribe({
+    this.cardsrv.GetBlank(this.player).subscribe({
       next: res => {
         this.playercard = res;
         this.AIcard = res;
@@ -30,5 +30,15 @@ export class PlayComponent implements OnInit {
       error: err => console.log(err)
     })
     this.player = this.playersrv.currentplayer
+  }
+  draw(): void {
+    this.cardsrv.GetPlayerCard().subscribe({
+      next: res => this.playercard = res,
+      error: err => console.log(err)
+    });
+    this.cardsrv.GetAICard(this.playercard.id, this.player.id).subscribe({
+      next: res => this.AIcard = res,
+      error: err => console.log(err)
+    });
   }
 }

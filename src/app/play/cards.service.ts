@@ -14,10 +14,10 @@ export class CardsService {
   GetPlayerCard(): Observable<Card>{
     return this.httpmeth.get(`${this.baseurl}/playernum`) as Observable<Card>
   }
-  GetAICard(playernum: string, player: Player): Observable<Card>{
+  GetAICard(playernum: number, player: number): Observable<Card>{
     return this.httpmeth.get(`${this.baseurl}/rand/${playernum}/${player}`) as Observable<Card>
   }
-  GetBlank(): Observable<Card>{
+  GetBlank(player: Player): Observable<Card>{
     return this.httpmeth.get(`${this.baseurl}/blank`) as Observable<Card>
   }
 }
