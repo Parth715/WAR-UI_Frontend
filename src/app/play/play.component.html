@@ -3,14 +3,14 @@
     <img src ="assets/images/back_of_playing_card.png">
 </p>
 <p class = "space">
-    <span>Wins:</span>
-    <span class = "space" class = "left"><img src ="assets/images/back_of_playing_card.png"></span>
+    <span class = "space"><img src ={{player.photo}}></span>
     <span>{{player.outcome}}</span>
-    <span class = "space" class = "left"><img src ="assets/images/back_of_playing_card.png"></span>
-    <span class = "left">Losses:</span>
+    <span class = "space" class = "left"><img src = {{player.photo}}></span>
 </p>
 <p>
     <img src ="assets/images/back_of_playing_card.png"></p>
 <p>
+    Wins: <span>{{player.wins}}</span>
     <button type = "button" class = "btn btn-secondary" (click)="draw()">Draw</button>
+    Losses: <span>{{player.losses}}</span>
 </p>

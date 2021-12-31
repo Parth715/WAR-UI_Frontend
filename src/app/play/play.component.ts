@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Player } from '../player/player';
 import { PlayerService } from '../player/player.service';
 import { Card } from './card';
@@ -19,26 +19,24 @@ export class PlayComponent implements OnInit {
   player!: Player;
   
   ngOnInit(): void {
-    this.refresh();
-  }
-  refresh(): void {
     this.cardsrv.GetBlank(this.player).subscribe({
-      next: res => {
-        this.playercard = res;
-        this.AIcard = res;
-      },
+      next: res => this.playercard = res  ,
       error: err => console.log(err)
     })
-    this.player = this.playersrv.currentplayer
-  }
-  draw(): void {
     this.cardsrv.GetPlayerCard().subscribe({
-      next: res => this.playercard = res,
+      next: res => {this.playercard = res},
       error: err => console.log(err)
     });
+    
+    this.player = this.playersrv.currentplayer
+  }
+  refresh(): void {
     this.cardsrv.GetAICard(this.playercard.id, this.player.id).subscribe({
       next: res => this.AIcard = res,
       error: err => console.log(err)
     });
+  }
+  draw(): void {
+    this.refresh();
   }
 }
