@@ -19,24 +19,27 @@ export class PlayComponent implements OnInit {
   player!: Player;
   
   ngOnInit(): void {
-    this.cardsrv.GetBlank(this.player).subscribe({
-      next: res => this.playercard = res  ,
-      error: err => console.log(err)
-    })
-    this.cardsrv.GetPlayerCard().subscribe({
-      next: res => {this.playercard = res},
-      error: err => console.log(err)
-    });
-    
     this.player = this.playersrv.currentplayer
+    this.cardsrv.GetBlank(this.player).subscribe({
+      next: res => {this.AIcard = res
+                    this.playercard = res} ,
+      error: err => console.log(err)
+    })   
   }
-  refresh(): void {
+  AICARD(): void {
     this.cardsrv.GetAICard(this.playercard.id, this.player.id).subscribe({
       next: res => this.AIcard = res,
       error: err => console.log(err)
     });
   }
+  PLAYERCARD(): void {
+    this.cardsrv.GetPlayerCard().subscribe({
+      next: res => {this.playercard = res},
+      error: err => console.log(err)
+    });
+  }
   draw(): void {
-    this.refresh();
+    this.PLAYERCARD();
+    this.AICARD();
   }
 }
