@@ -27,7 +27,7 @@ export class PlayComponent implements OnInit {
     })   
   }
   AICARD(): void {
-    this.cardsrv.GetAICard(this.playercard.id, this.player.id).subscribe({
+    this.cardsrv.GetAICard(this.player.id).subscribe({
       next: res => this.AIcard = res,
       error: err => console.log(err)
     });
