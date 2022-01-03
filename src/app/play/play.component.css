@@ -12,3 +12,9 @@ img {
     width: 175px;
     height: 175px;
 }
+.spread {
+    padding-left: 33%;
+}
+.secondspread {
+    padding-left: 22%;
+}

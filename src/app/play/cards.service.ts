@@ -20,4 +20,7 @@ export class CardsService {
   GetBlank(player: Player): Observable<Card>{
     return this.httpmeth.get(`${this.baseurl}/blank`) as Observable<Card>
   }
+  GetResult(player: Player, playercard: Card, aicard: Card): Observable<Player>{
+    return this.httpmeth.get(`http://localhost:5085/api/players/${player}/${playercard}/${aicard}`) as Observable<Player>
+  }
 }

@@ -28,7 +28,8 @@ export class PlayComponent implements OnInit {
   }
   AICARD(): void {
     this.cardsrv.GetAICard(this.player.id).subscribe({
-      next: res => this.AIcard = res,
+      next: res => {this.AIcard = res
+                    this.check()},
       error: err => console.log(err)
     });
   }
@@ -42,4 +43,11 @@ export class PlayComponent implements OnInit {
     this.PLAYERCARD();
     this.AICARD();
   }
+  check(): void {
+    this.cardsrv.GetResult(this.player, this.playercard, this.AIcard).subscribe({
+      next: res => this.player = res,
+      error: err => console.log(err)
+    })
+  }
 }
+

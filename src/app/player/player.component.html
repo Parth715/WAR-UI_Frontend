@@ -4,16 +4,12 @@
     <thead>
         <tr>
             <th>Name</th>
-            <th>Wins</th>
-            <th>Losses</th>
             <th>Action</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let p of players">
             <td>{{p.name}}</td>
-            <td>{{p.wins}}</td>
-            <td>{{p.losses}}</td>
             <td>
                 <a routerLink = "/selectplayer/{{p.id}}">Play</a>
             </td>
