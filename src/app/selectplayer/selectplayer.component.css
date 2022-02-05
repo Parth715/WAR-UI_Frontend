@@ -2,3 +2,9 @@ table{
     margin-left: 45%;
     margin-top: 10%;
 }
+.bg-image{
+    background-image: url('../../assets/Images/poker_table.jpg'); 
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

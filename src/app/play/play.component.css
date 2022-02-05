@@ -18,3 +18,9 @@ img {
 .secondspread {
     padding-left: 22%;
 }
+.bg-image{
+    background-image: url('../../assets/Images/poker_table.jpg'); 
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

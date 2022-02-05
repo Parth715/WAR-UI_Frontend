@@ -1,18 +1,20 @@
-<button type = button class = "btn btn-primary" routerLink="/welcome">QUIT</button>
-<p class = "space">
-    <img src ="assets/images/back_of_playing_card.png">
-</p>
-<div>
-    <span class = "spread">Your Card</span>
-    <span class = "secondspread">Opponent Card</span>
-</div>
-<p class = "space">
-    <span class = "space"><img src ={{playercard.photo}}></span>
+<body class = bg-image>
+    <button type = button class = "btn btn-primary" routerLink="/welcome">QUIT</button>
+    <p class = "space">
+        <img src ="../../assets/images/back_of_playing_card.png">
+    </p>
+    <div>
+        <span class = "spread">Your Card</span>
+        <span class = "secondspread">Opponent Card</span>
+    </div>
+    <p class = "space">
+        <span class = "space"><img src ={{player.card.photo}}></span>
     <span>{{player.outcome}}</span>
-    <span class = "space" class = "left"><img src = {{AIcard.photo}}></span>
+    <span class = "space" class = "left"><img src = {{AI.card.photo}}></span>
 </p>
 <p>
     <img src ="assets/images/back_of_playing_card.png"></p>
-<p>
-    <button type = "button" class = "btn btn-secondary" (click)="draw()">Draw</button>
-</p>
+    <p>
+        <button type = "button" class = "btn btn-secondary" (click)="draw()">Draw</button>
+    </p>
+</body>

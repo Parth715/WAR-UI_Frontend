@@ -1,13 +1,15 @@
-<app-menu></app-menu>
-<h2>
-    <buton type = "button" class = "btn btn-primary" routerLink = "/player">Back</buton>
-</h2>
-<table>
-    <tr>
-        <td><h2>Name:</h2></td>
-        <td><h2> {{player.name}}</h2></td>
-    </tr>
-    <tr>
-        <button type = "button" class = "btn btn-primary" (click)="play()">Play</button>
-    </tr>
-</table>
+<body class = bg-image>
+    <app-menu></app-menu>
+    <h2>
+        <buton type = "button" class = "btn btn-primary" routerLink = "/player">Back</buton>
+    </h2>
+    <table>
+        <tr>
+            <td><h2>Name:</h2></td>
+            <td><h2> {{player.name}}</h2></td>
+        </tr>
+        <tr>
+            <button type = "button" class = "btn btn-primary" (click)="play()">Play</button>
+        </tr>
+    </table>
+</body>

@@ -14,7 +14,7 @@ export class PlayerService {
   Getall(): Observable<Player[]>{
     return this.httpmeth.get(this.baseurl) as Observable<Player[]>
   }
-  GetByPK(id: string): Observable<Player>{
+  GetByPK(id: number): Observable<Player>{
     return this.httpmeth.get(`${this.baseurl}/${id}`) as Observable<Player>
   }
 }
