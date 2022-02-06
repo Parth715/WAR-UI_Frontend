@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Player } from '../player/player';
+import { Player } from '../player';
 import { Card } from './card';
 
 @Injectable({
@@ -14,8 +14,8 @@ export class CardsService {
   GetPlayerCard(): Observable<Card>{
     return this.httpmeth.get(`${this.baseurl}/playernum`) as Observable<Card>
   }
-  GetAICard(player: number): Observable<Card>{
-    return this.httpmeth.get(`${this.baseurl}/rand/${player}`) as Observable<Card>
+  Draw(id: number): Observable<Card>{
+    return this.httpmeth.put(`${this.baseurl}/rand/${id}`, id) as Observable<Card>
   }
   GetBlank(player: Player): Observable<Card>{
     return this.httpmeth.get(`${this.baseurl}/blank`) as Observable<Card>

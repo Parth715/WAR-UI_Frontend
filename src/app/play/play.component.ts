@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
-import { Player } from '../player/player';
-import { PlayerService } from '../player/player.service';
-import { Card } from './card';
+import { Player } from '../player';
+import { PlayerService } from '../player.service';
 import { CardsService } from './cards.service';
 
 @Component({
@@ -18,24 +17,24 @@ export class PlayComponent implements OnInit {
   AI!: Player;
   
   ngOnInit(): void {
-    this.player = this.playersrv.currentplayer
     this.updateplayers();
   }
   updateplayers(): void{
-    this.playersrv.GetByPK(this.player.id).subscribe({
+    this.playersrv.GetByPK(1).subscribe({
       next: res => {this.player = res} ,
       error: err => console.log(err)
     })   
-    this.playersrv.GetByPK(2).subscribe({
+    this.playersrv.GetByPK(4).subscribe({
       next: res => {this.AI = res},
       error: err => console.log(err)
     });
   }
   draw(): void{
-    
-  }
-  check(): void {
-    
+    this.playersrv.Draw().subscribe({
+      next: res => {console.log(res)
+                    this.updateplayers();},
+      error: err => console.log(err)
+    });
   }
 }
 

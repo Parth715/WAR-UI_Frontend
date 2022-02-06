@@ -1,4 +1,4 @@
-import { Card } from "../play/card";
+import { Card } from "./play/card";
 
 export class Player {
     id: number = 0;
