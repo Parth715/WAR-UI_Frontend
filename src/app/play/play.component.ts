@@ -1,4 +1,6 @@
+import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { resetFakeAsyncZone } from '@angular/core/testing';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Player } from '../player';
 import { PlayerService } from '../player.service';
@@ -35,6 +37,16 @@ export class PlayComponent implements OnInit {
                     this.updateplayers();},
       error: err => console.log(err)
     });
+  }
+  reset(): void{
+    this.playersrv.Blank(this.player).subscribe({
+      next: res => this.player = res,
+      error: err => console.log(err)
+    })
+    this.playersrv.Blank1(this.AI).subscribe({
+      next: res => this.AI = res,
+      error: err => console.log(err)
+    })
   }
 }
 

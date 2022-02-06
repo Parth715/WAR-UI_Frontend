@@ -16,4 +16,10 @@ export class PlayerService {
   Draw(): Observable<Player>{
       return this.httpmeth.get(`${this.baseurl}/rand`)as Observable<Player>
   }
+  Blank(player: Player): Observable<Player>{
+    return this.httpmeth.put(`${this.baseurl}/Blank/${player}`, player) as Observable<Player>
+  }
+  Blank1(AI: Player): Observable<Player>{
+    return this.httpmeth.put(`${this.baseurl}/Blank/${AI}`, AI) as Observable<Player>
+  }
 }
